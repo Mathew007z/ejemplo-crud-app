@@ -1,15 +1,15 @@
 
 
-
+import './cssrow.css';
 
 const CrudTableRow = ({db, setDataToEdit, deleteData}) => {
   return (
-    <tr>
-        <td>{db.name}</td>
-        <td>{db.arma}</td>
-        <td>
-            <button onClick={() =>setDataToEdit(db)}>Editar</button>
-            <button onClick={() =>deleteData(db.id)}>Eliminar</button>
+    <tr className='tr-name'>
+        <td className='name-pj'>{db.name}</td>
+        <td className='name-pj'>{db.arma}</td>
+        <td className='name-pj'>
+            <button onClick={() =>setDataToEdit(db)} className='button-row'>Editar</button>
+            <button onClick={() =>deleteData(db.id)} className='button-row'>Eliminar</button>
         </td>
     </tr>
   )

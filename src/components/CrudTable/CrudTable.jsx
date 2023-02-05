@@ -1,18 +1,18 @@
 import CrudTableRow from "../CrudTableRow/CrudTableRow"
-
+import './crudtable.css';
 
 
 
 const CrudTable = ({db, deleteData, setDataToEdit}) => {
   return (
-    <div>
-        <h3>Tabla de Datos</h3>
+    <div className="table">
+        <h3>Tabla de Héroes</h3>
         <table>
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Arma</th>
-                    <th>Acciones</th>
+                <tr className="tr-name">
+                    <th className="th-name">Nombre</th>
+                    <th className="th-name">Arma</th>
+                    <th className="th-name">Acciones</th>
                 </tr>
             </thead>
             <tbody>

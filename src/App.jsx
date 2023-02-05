@@ -6,7 +6,6 @@ function App() {
 
   return (
     <>
-      <div>Ejercicio CRUD APP</div>
       <CrudApp/>
     </>
     

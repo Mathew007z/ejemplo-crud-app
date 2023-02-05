@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react"
+import groot from '../../assets/groot.png';
+import './crudform.css';
+
 
 // estado inicial
 const initialForm = {
@@ -52,23 +55,28 @@ const CrudForm = ({updateData, createData, dataToEdit, setDataToEdit}) => {
 
 
   return (
-    <div>
-        <h3>{dataToEdit ? 'Editar' : 'Agregar'}</h3>
+    <div className="form-contain">
+        <div className="groot">
+        <img src={groot} alt={groot} style={{width:'140px'}}/>
+        <h3>{dataToEdit ? 'Editar:' : 'Agregar:'}</h3>
+        </div>
         <form onSubmit={handleSubmit}>
             <input
+            className="input-field"
             type="text"
             name='name'
             placeholder='Nombre' 
             onChange={handleChange} 
             value={form.name}/>
             <input 
+            className="input-field"
             type="text" 
             name='arma' 
             placeholder='Arma' 
             onChange={handleChange} 
             value={form.arma}/>
-            <input type="submit" value='Enviar'/>
-            <input type="reset" value='Limpiar' onClick={handleReset}/>
+            <input type="submit" value='Enviar' className="button-box"/>
+            <input type="reset" value='Limpiar' onClick={handleReset} className="button-box"/>
         </form>
     </div>
   )

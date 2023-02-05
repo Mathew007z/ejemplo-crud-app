@@ -1,7 +1,7 @@
 import CrudForm from "../CrudForm/CrudForm";
 import CrudTable from "../CrudTable/CrudTable";
 import {useState} from 'react';
-
+import './crudapp.css';
 
 
 
@@ -24,8 +24,8 @@ const initialDb = [
   },
   {
     id: 4,
-    name: "BlackWidow",
-    arma: "Agilidad",
+    name: "DoctorStrange",
+    arma: "Gema del tiempo",
   },
   {
     id: 5,
@@ -35,24 +35,22 @@ const initialDb = [
 ];
 
 
-
-
 const CrudApp = () => {
     const [db, setDb] = useState(initialDb)
     // Cuando este Null significa que va a haber una insercion de datos
     // Si da true, significa que se hara una edicion de datos.
     const [dataToEdit, setDataToEdit] = useState(null);
-
-
-
+  // PUT
     const createData = (data) => {
         data.id = Date.now();
         setDb([...db, data]);
     }
+    // POST
     const updateData = (data) => {
         let newData = db.map(el => el.id === data.id ? data : el)
         setDb(newData)
     }
+    // DELETE
     const deleteData = (id) => {
         let isDelete = window.confirm(`Estas seguro de querer eliminar el registro ${id}?`)
         if(isDelete){
@@ -65,8 +63,8 @@ const CrudApp = () => {
 
 
   return(
-    <div>
-        <h2>CrudApp</h2>
+    <div className="content-form">
+        <h2>MARVEL</h2>
         <CrudForm 
         createData={createData} 
         updateData={updateData}
